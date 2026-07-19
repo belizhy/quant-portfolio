@@ -97,11 +97,11 @@ The notebook auto-detects the most recent CSV in `data/`.
 
 ## Key findings
 
-*(Populated after running on live data — template values below.)*
+*(Based on a 15-minute live capture of BTCUSDT, 850 snapshots, July 19 2026.)*
 
-- **Spread**: Mean ~1–3 bps for BTCUSDT; spikes during high-volatility moments.
-- **OFI correlation**: Peak Pearson ρ ≈ 0.15–0.35 at 1–5 second horizon, decaying to near zero by 20–30 seconds — consistent with Cont et al. (2014) and crypto microstructure literature.
-- **Directional accuracy**: Logistic regression achieves ~53–60 % out-of-sample accuracy (vs. 50 % baseline), confirming a modest but real short-lived directional signal in OFI.
+- **Spread**: Mean ~15.5 bps for BTCUSDT; stable in a narrow band (~15.0–15.5 bps), with mild widening during periods of larger mid-price moves.
+- **OFI correlation**: Peak Pearson ρ ≈ 0.31 at a ~10-second horizon, decaying to ρ ≈ 0.20 by 30 seconds — directionally consistent with Cont et al. (2014), though the peak correlation is higher than typical published estimates, likely reflecting the short 15-minute sample size.
+- **Directional accuracy**: Logistic regression reaches 82.9 % out-of-sample accuracy, but this is *below* the 88.3 % naive majority-class baseline (dataset is imbalanced: only 11.7 % "Up" moves). Recall on the "Up" class is weak (27 %), showing that a naive classifier cannot yet exploit the OFI signal despite its real correlation with returns — next step is class rebalancing or reframing as regression on continuous returns.
 
 ---
 
